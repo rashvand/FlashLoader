@@ -1,2 +1,2 @@
 # Flash_Loader
- Winbond Flash Loader (IAR and Keil)
+ Winbond Flash Loader for STM32H750VB (IAR and Keil)

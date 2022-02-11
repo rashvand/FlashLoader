@@ -1,0 +1,90 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\Framework\flash_loader.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\src\flashloader\framework2\flash_loader.c" -xcl_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\Framework\flash_loader.xcl -macro_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\Framework\flash_loader.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\src\flashloader\framework2\flash_loader.c" -o D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\Framework --debug --endian=little --cpu=Cortex-M7 -e --fpu=VFPv5_d16 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\src\flashloader\framework2\\" -I D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\ -I D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\ -Oh --use_c++_inline -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\Framework\flash_loader.tmp
+  rspfile_name = D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\Framework\flash_loader.xcl.rsp
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_cortex.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\stm32h7xx_hal_cortex.c -xcl_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_cortex.xcl -macro_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_cortex.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\stm32h7xx_hal_cortex.c -o D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\HAL --debug --endian=little --cpu=Cortex-M7 -e --fpu=VFPv5_d16 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\src\flashloader\framework2\\" -I D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\ -I D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\ -Oh --use_c++_inline -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_cortex.tmp
+  rspfile_name = D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_cortex.xcl.rsp
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_iwdg.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\stm32h7xx_hal_iwdg.c -xcl_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_iwdg.xcl -macro_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_iwdg.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\stm32h7xx_hal_iwdg.c -o D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\HAL --debug --endian=little --cpu=Cortex-M7 -e --fpu=VFPv5_d16 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\src\flashloader\framework2\\" -I D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\ -I D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\ -Oh --use_c++_inline -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_iwdg.tmp
+  rspfile_name = D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_iwdg.xcl.rsp
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_qspi.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\stm32h7xx_hal_qspi.c -xcl_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_qspi.xcl -macro_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_qspi.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\stm32h7xx_hal_qspi.c -o D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\HAL --debug --endian=little --cpu=Cortex-M7 -e --fpu=VFPv5_d16 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\src\flashloader\framework2\\" -I D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\ -I D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\ -Oh --use_c++_inline -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_qspi.tmp
+  rspfile_name = D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_qspi.xcl.rsp
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\FlashSTM32H7xx_QSPI.c -xcl_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.xcl -macro_file D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\FlashSTM32H7xx_QSPI.c -o D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\ --debug --endian=little --cpu=Cortex-M7 -e --fpu=VFPv5_d16 --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\src\flashloader\framework2\\" -I D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\ -I D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\ -Oh --use_c++_inline -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\Core\Include\\" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\CMSIS\DSP\Include\\" --predef_macros D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.tmp
+  rspfile_name = D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.xcl.rsp
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\Framework\flash_loader.pbi : INDEXER D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\Framework\flash_loader.xcl |  $
+C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\src\flashloader\framework2\flash_loader.c
+  flags = -out=D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\Framework\flash_loader.pbi -f D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\Framework\flash_loader.xcl
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_cortex.pbi : INDEXER D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_cortex.xcl |  $
+D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\stm32h7xx_hal_cortex.c
+  flags = -out=D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_cortex.pbi -f D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_cortex.xcl
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_iwdg.pbi : INDEXER D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_iwdg.xcl |  $
+D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\stm32h7xx_hal_iwdg.c
+  flags = -out=D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_iwdg.pbi -f D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_iwdg.xcl
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_qspi.pbi : INDEXER D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_qspi.xcl |  $
+D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\HAL\stm32h7xx_hal_qspi.c
+  flags = -out=D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_qspi.pbi -f D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_qspi.xcl
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.pbi : INDEXER D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.xcl |  $
+D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\FlashSTM32H7xx_QSPI.c
+  flags = -out=D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.pbi -f D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.xcl
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.pbw : MAKEBROWSE D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.pbd
+  flags = D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.pbd -output D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.pbw
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI_part0.pbi : PDBLINK D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\Framework\flash_loader.pbi |  $
+D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_cortex.pbi
+  flags = -M D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI_part0.pbi D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\Framework\flash_loader.pbi D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_cortex.pbi
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI_part1.pbi : PDBLINK D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_iwdg.pbi |  $
+D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_qspi.pbi
+  flags = -M D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI_part1.pbi D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_iwdg.pbi D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\HAL\stm32h7xx_hal_qspi.pbi
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI_part2.pbi : PDBLINK D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.pbi
+  flags = -M D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI_part2.pbi D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.pbi
+
+build D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.pbd : PDBLINK D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI_part0.pbi |  $
+D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI_part1.pbi $
+D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI_part2.pbi
+  flags = -M D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI.pbd D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI_part0.pbi D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI_part1.pbi D$:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\FlashSTM32H7xx_QSPI_part2.pbi
+

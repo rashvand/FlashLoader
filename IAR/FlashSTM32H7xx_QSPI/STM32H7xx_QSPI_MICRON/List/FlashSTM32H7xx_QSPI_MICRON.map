@@ -1,0 +1,234 @@
+###############################################################################
+#
+# IAR ELF Linker V9.20.1.318/W64 for ARM                  10/Feb/2022  09:13:03
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Exe\FlashSTM32H7xx_QSPI_MICRON.out
+#    Map file     =
+#        D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\List\FlashSTM32H7xx_QSPI_MICRON.map
+#    Command line =
+#        -f
+#        D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Exe\FlashSTM32H7xx_QSPI_MICRON.out.rsp
+#        (D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\Framework\flash_loader.o
+#        D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\Framework\flash_loader_asm.o
+#        D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\FlashSTM32H7xx_QSPI.o
+#        D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\HAL\stm32h7xx_hal_cortex.o
+#        D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\HAL\stm32h7xx_hal_iwdg.o
+#        D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\HAL\stm32h7xx_hal_qspi.o
+#        --no_out_extension -o
+#        D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Exe\FlashSTM32H7xx_QSPI_MICRON.out
+#        --map
+#        D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\List\FlashSTM32H7xx_QSPI_MICRON.map
+#        --config
+#        D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\FlashSTM32H7xx.icf
+#        --entry FlashInitEntry --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at start of [from 0x2400'0000 to 0x2403'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 0, alignment = 8 { };
+define block RamTop
+   with fixed order { rw, block CSTACK, block HEAP, section LOWEND };
+"P1":  place in [from 0x2400'0000 to 0x2403'ffff] { block RamTop };
+"A1":  place at end of [from 0x2400'0000 to 0x2403'ffff] { section HIGHSTART };
+
+  Section     Kind         Address    Size  Object
+  -------     ----         -------    ----  ------
+"A0":                                0xca6
+  .intvec     ro code  0x2400'0000    0x20  flash_loader_asm.o [2]
+  .text       ro code  0x2400'0020    0x6e  flash_loader.o [2]
+  .rodata     const    0x2400'008e     0x2  flash_loader.o [2]
+  .text       ro code  0x2400'0090   0x468  FlashSTM32H7xx_QSPI.o [1]
+  .text       ro code  0x2400'04f8     0x6  ABImemclr4.o [6]
+  .text       ro code  0x2400'04fe     0xa  xsprout.o [4]
+  .text       ro code  0x2400'0508   0x53c  stm32h7xx_hal_qspi.o [3]
+  .text       ro code  0x2400'0a44    0x18  strcpy.o [6]
+  .text       ro code  0x2400'0a5c    0x1e  strcat.o [4]
+  .text       ro code  0x2400'0a7c    0x40  sprintf.o [4]
+  .text       ro code  0x2400'0abc     0xc  stm32h7xx_hal_iwdg.o [3]
+  .text       ro code  0x2400'0ac8    0x32  ABImemset48.o [6]
+  .text       ro code  0x2400'0afa     0x2  stm32h7xx_hal_qspi.o [3]
+  .text       ro code  0x2400'0afc     0x2  stm32h7xx_hal_qspi.o [3]
+  .text       ro code  0x2400'0afe   0x136  xprintftiny.o [4]
+  .text       ro code  0x2400'0c34    0x36  strlen.o [6]
+  .text       ro code  0x2400'0c6c    0x18  flash_loader_asm.o [2]
+  .text       ro code  0x2400'0c84    0x22  fpinit_M.o [5]
+                     - 0x2400'0ca6   0xca6
+
+"P1":                               0x1158
+  RamTop               0x2400'0ca8  0x1158  <Block>
+    .noinit   uninit   0x2400'0ca8    0x14  flash_loader.o [2]
+    .noinit   uninit   0x2400'0cbc    0x6c  FlashSTM32H7xx_QSPI.o [1]
+    .noinit   uninit   0x2400'0d28    0x4c  FlashSTM32H7xx_QSPI.o [1]
+    CSTACK             0x2400'0d78  0x1000  <Block>
+      CSTACK  uninit   0x2400'0d78  0x1000  <Block tail>
+    LOWEND    rw data  0x2400'1e00     0x0  flash_loader_asm.o [2]
+                     - 0x2400'1e00  0x1158
+
+"A1":                                  0x0
+  HIGHSTART   rw data  0x2404'0000     0x0  flash_loader_asm.o [2]
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+  0x2400'0ca6  0x2400'0ca7       0x2
+  0x2400'1e00  0x2403'ffff  0x3'e200
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+command line/config:
+    ------------------------------------------------
+    Total:
+
+D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj: [1]
+    FlashSTM32H7xx_QSPI.o    1'128               184
+    ------------------------------------------------
+    Total:                   1'128               184
+
+D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\Framework: [2]
+    flash_loader.o             110        2       20
+    flash_loader_asm.o          56
+    ------------------------------------------------
+    Total:                     166        2       20
+
+D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\HAL: [3]
+    stm32h7xx_hal_iwdg.o        12
+    stm32h7xx_hal_qspi.o     1'344
+    ------------------------------------------------
+    Total:                   1'356
+
+dl7M_tln.a: [4]
+    sprintf.o                   64
+    strcat.o                    30
+    xprintftiny.o              310
+    xsprout.o                   10
+    ------------------------------------------------
+    Total:                     414
+
+m7M_tlv.a: [5]
+    fpinit_M.o                  34
+    ------------------------------------------------
+    Total:                      34
+
+rt7M_tl.a: [6]
+    ABImemclr4.o                 6
+    ABImemset48.o               50
+    strcpy.o                    24
+    strlen.o                    54
+    ------------------------------------------------
+    Total:                     134
+
+    Gaps                         4               136
+    Linker created                             4'096
+----------------------------------------------------
+    Grand Total:             3'236        2    4'436
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+CSTACK$$Base            0x2400'0d78          --   Gb  - Linker created -
+CSTACK$$Limit           0x2400'1d78          --   Gb  - Linker created -
+Fl2FlashEraseWriteEntry
+                        0x2400'0049   0x40  Code  Gb  flash_loader.o [2]
+Fl2FlashInitEntry       0x2400'0021   0x14  Code  Gb  flash_loader.o [2]
+Fl2FlashWriteEntry      0x2400'0035   0x14  Code  Gb  flash_loader.o [2]
+FlashAddressSize        0x2400'0d20    0x4  Data  Gb  FlashSTM32H7xx_QSPI.o [1]
+FlashBreak              0x2400'008d    0x2  Code  Gb  flash_loader.o [2]
+FlashBufferEnd          0x2404'0000         Data  Gb  flash_loader_asm.o [2]
+FlashBufferStart        0x2400'1e00         Data  Gb  flash_loader_asm.o [2]
+FlashErase              0x2400'036d   0x9c  Code  Gb  FlashSTM32H7xx_QSPI.o [1]
+FlashEraseWriteEntry    0x2400'0c7d         Code  Gb  flash_loader_asm.o [2]
+FlashInit               0x2400'0091  0x20e  Code  Gb  FlashSTM32H7xx_QSPI.o [1]
+FlashInitEntry          0x2400'0c6d         Code  Gb  flash_loader_asm.o [2]
+FlashPageSize           0x2400'0d24    0x4  Data  Gb  FlashSTM32H7xx_QSPI.o [1]
+FlashWrite              0x2400'02a1   0xcc  Code  Gb  FlashSTM32H7xx_QSPI.o [1]
+FlashWriteEntry         0x2400'0c75         Code  Gb  flash_loader_asm.o [2]
+HAL_GetTick             0x2400'045d    0xa  Code  Gb  FlashSTM32H7xx_QSPI.o [1]
+HAL_IWDG_Refresh        0x2400'0abd    0xc  Code  Gb  stm32h7xx_hal_iwdg.o [3]
+HAL_QSPI_AutoPolling    0x2400'0809   0xa0  Code  Gb  stm32h7xx_hal_qspi.o [3]
+HAL_QSPI_Command        0x2400'05c9   0x80  Code  Gb  stm32h7xx_hal_qspi.o [3]
+HAL_QSPI_DeInit         0x2400'05a3   0x26  Code  Gb  stm32h7xx_hal_qspi.o [3]
+HAL_QSPI_Init           0x2400'0509   0x9a  Code  Gb  stm32h7xx_hal_qspi.o [3]
+HAL_QSPI_Receive        0x2400'071b   0xe6  Code  Gb  stm32h7xx_hal_qspi.o [3]
+HAL_QSPI_Transmit       0x2400'0649   0xd2  Code  Gb  stm32h7xx_hal_qspi.o [3]
+IWDG1Handle             0x2400'0d10   0x10  Data  Gb  FlashSTM32H7xx_QSPI.o [1]
+QSPIHandle              0x2400'0d28   0x4c  Data  Gb  FlashSTM32H7xx_QSPI.o [1]
+QSPI_Config             0x2400'08f7  0x14e  Code  Lc  stm32h7xx_hal_qspi.o [3]
+QSPI_WaitFlagStateUntilTimeout
+                        0x2400'08a9   0x4e  Code  Lc  stm32h7xx_hal_qspi.o [3]
+QSPI_WriteEnable        0x2400'0409   0x54  Code  Lc  FlashSTM32H7xx_QSPI.o [1]
+RamTop$$Base            0x2400'0ca8          --   Gb  - Linker created -
+RamTop$$Limit           0x2400'1e00          --   Gb  - Linker created -
+_PrintfTiny             0x2400'0b17  0x11e  Code  Gb  xprintftiny.o [4]
+_SProut                 0x2400'04ff    0xa  Code  Gb  xsprout.o [4]
+__aeabi_memclr4         0x2400'04f9         Code  Gb  ABImemclr4.o [6]
+__iar_Memset4_word      0x2400'0ac9         Code  Gb  ABImemset48.o [6]
+__iar_Memset8_word      0x2400'0ac9         Code  Gb  ABImemset48.o [6]
+__iar_init_vfp          0x2400'0c85         Code  Gb  fpinit_M.o [5]
+__vector_table          0x2400'0000         Data  Gb  flash_loader_asm.o [2]
+csEraseErr              0x2400'049c   0x10  Data  Lc  FlashSTM32H7xx_QSPI.o [1]
+csInitErr               0x2400'04ac   0x10  Data  Lc  FlashSTM32H7xx_QSPI.o [1]
+csNoFlashErr            0x2400'04dc   0x1c  Data  Lc  FlashSTM32H7xx_QSPI.o [1]
+csTimeoutErr            0x2400'04bc   0x20  Data  Lc  FlashSTM32H7xx_QSPI.o [1]
+csWriteErr              0x2400'048c   0x10  Data  Lc  FlashSTM32H7xx_QSPI.o [1]
+frameworkVersion        0x2400'008e    0x2  Data  Gb  flash_loader.o [2]
+out                     0x2400'0aff   0x18  Code  Lc  xprintftiny.o [4]
+sCommand                0x2400'0cbc   0x38  Data  Gb  FlashSTM32H7xx_QSPI.o [1]
+sConfig                 0x2400'0cf4   0x18  Data  Gb  FlashSTM32H7xx_QSPI.o [1]
+sprintf                 0x2400'0a7d   0x40  Code  Gb  sprintf.o [4]
+strcat                  0x2400'0a5d   0x1e  Code  Gb  strcat.o [4]
+strcpy                  0x2400'0a45         Code  Gb  strcpy.o [6]
+strlen                  0x2400'0c35         Code  Gb  strlen.o [6]
+theFlashParams          0x2400'0ca8   0x14  Data  Gb  flash_loader.o [2]
+uwTick                  0x2400'0d0c    0x4  Data  Gb  FlashSTM32H7xx_QSPI.o [1]
+
+
+[1] = D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj
+[2] = D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\Framework
+[3] = D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\Obj\HAL
+[4] = dl7M_tln.a
+[5] = m7M_tlv.a
+[6] = rt7M_tl.a
+
+  3'236 bytes of readonly  code memory
+      2 bytes of readonly  data memory
+  4'436 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

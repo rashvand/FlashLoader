@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>443260519</fileChecksum>
+    <configuration>
+        <name>STM32H7xx_QSPI_MICRON</name>
+        <outputs>
+            <file>$PROJ_DIR$\HAL\stm32h7xx_hal_def.h</file>
+            <file>$TOOLKIT_DIR$\src\flashloader\framework2\flash_loader.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\HAL\stm32h7xx_hal_conf.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$PROJ_DIR$\flash_config.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$PROJ_DIR$\HAL\stm32h7xx_hal_cortex.h</file>
+            <file>$PROJ_DIR$\HAL\stm32h7xx_hal_iwdg.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\cmsis_iar.h</file>
+            <file>$PROJ_DIR$\STM32H7xx_QSPI_MICRON\Obj\HAL\stm32h7xx_hal_qspi.o</file>
+            <file>$PROJ_DIR$\STM32H7xx_QSPI_MICRON\List\FlashSTM32H7xx_QSPI_MICRON.map</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\iccarm_builtin.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$PROJ_DIR$\HAL\stm32h7xx_hal_mdma.h</file>
+            <file>$PROJ_DIR$\HAL\stm32h750xx.h</file>
+            <file>$PROJ_DIR$\HAL\core_cm7.h</file>
+            <file>$PROJ_DIR$\HAL\stm32h7xx.h</file>
+            <file>$PROJ_DIR$\HAL\system_stm32h7xx.h</file>
+            <file>$PROJ_DIR$\HAL\stm32h7xx_hal_rcc_ex.h</file>
+            <file>$PROJ_DIR$\STM32H7xx_QSPI_MICRON\Obj\Framework\flash_loader.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\HAL\cmsis_compiler.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tlv.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\HAL\Legacy\stm32_hal_legacy.h</file>
+            <file>$TOOLKIT_DIR$\src\flashloader\framework2\flash_loader_extra.h</file>
+            <file>$PROJ_DIR$\HAL\stm32h7xx_hal_qspi.c</file>
+            <file>$PROJ_DIR$\STM32H7xx_QSPI_MICRON\Obj\HAL\stm32h7xx_hal_iwdg.o</file>
+            <file>$PROJ_DIR$\FlashSTM32H7xx_QSPI.mac</file>
+            <file>$TOOLKIT_DIR$\src\flashloader\framework2\flash_loader_asm.s</file>
+            <file>$PROJ_DIR$\HAL\stm32h7xx_hal_cortex.c</file>
+            <file>$PROJ_DIR$\HAL\stm32h7xx_hal_iwdg.c</file>
+            <file>$TOOLKIT_DIR$\src\flashloader\framework2\flash_loader.c</file>
+            <file>$PROJ_DIR$\STM32H7xx_QSPI_MICRON\Exe\FlashSTM32H7xx_QSPI_MICRON.out</file>
+            <file>$PROJ_DIR$\STM32H7xx_QSPI_MICRON\Obj\Framework\flash_loader_asm.o</file>
+            <file>$PROJ_DIR$\STM32H7xx_QSPI_MICRON\Obj\HAL\stm32h7xx_hal_cortex.o</file>
+            <file>$PROJ_DIR$\STM32H7xx_QSPI_MICRON\Obj\FlashSTM32H7xx_QSPI.o</file>
+            <file>$PROJ_DIR$\HAL\stm32h7xx_hal.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_float_setup.h</file>
+            <file>$PROJ_DIR$\HAL\stm32h7xx_hal_qspi.h</file>
+            <file>$PROJ_DIR$\STM32H7xx_QSPI_MICRON\Obj\Framework\flash_loader_asm.o.rsp</file>
+            <file>$PROJ_DIR$\FlashSTM32H7xx_QSPI.c</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$PROJ_DIR$\FlashSTM32H7xx.icf</file>
+            <file>$PROJ_DIR$\HAL\stm32h7xx_hal_rcc.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\math.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+        </outputs>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 37 12</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\HAL\stm32h7xx_hal_qspi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 11</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 6 50 23 43 10 14 51 47 2 52 13 42 28 24 18 17 19 41 3 7 0 8 16 44 49 21 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\src\flashloader\framework2\flash_loader_asm.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 38</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 45</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\HAL\stm32h7xx_hal_cortex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 39</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 6 50 23 43 10 14 51 47 2 52 13 42 28 24 18 17 19 41 3 7 0 8 16 44 49 21 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\HAL\stm32h7xx_hal_iwdg.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 31</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 6 50 23 43 10 14 51 47 2 52 13 42 28 24 18 17 19 41 3 7 0 8 16 44 49 21 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\src\flashloader\framework2\flash_loader.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 22</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 6 50 23 2 52 42 1 29 5</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\STM32H7xx_QSPI_MICRON\Exe\FlashSTM32H7xx_QSPI_MICRON.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 12</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 4 26 25 48 40 22 38 39 31 11</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\FlashSTM32H7xx_QSPI.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 40</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 6 50 23 9 43 10 14 51 47 2 15 27 52 13 42 1 29 28 24 18 17 19 41 3 7 0 8 16 44 49 21 20 5</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+</project>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flash_board>
+    <pass>
+        <loader>$PROJ_DIR$\CM\FlashLoader\FlashSTM32H7xx_QSPI.flash</loader>
+        <range>CODE 0x90000000 0x91ffffff</range>
+		<rel_offset>0x70000000</rel_offset>
+    </pass>
+</flash_board>

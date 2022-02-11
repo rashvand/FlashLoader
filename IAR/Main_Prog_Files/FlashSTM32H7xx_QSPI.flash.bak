@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="iso-8859-1"?><flash_device>  <exe>$PROJ_DIR$\CM\FlashLoader\FlashSTM32H7xx_QSPI_MICRON.out</exe>  <page>256</page>  <block>8192 0x1000</block>  <flash_base>0x90000000</flash_base>  <macro>$PROJ_DIR$\CM\FlashLoader\STM32H750_QSPI.mac</macro>  <aggregate>1</aggregate></flash_device>

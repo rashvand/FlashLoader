@@ -1,0 +1,11 @@
+D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\STM32H7xx_QSPI_MICRON\BrowseInfo\Framework\flash_loader.pbi: \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\src\flashloader\framework2\flash_loader.c \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\src\flashloader\framework2\flash_loader.h \
+  D:\Working\HMI\Code\FlashLoader\IAR\FlashSTM32H7xx_QSPI\flash_config.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\src\flashloader\framework2\flash_loader_extra.h

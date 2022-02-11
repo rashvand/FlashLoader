@@ -1,0 +1,21 @@
+execUserSetup()
+{
+
+}
+Access()
+{
+
+}
+
+__var x1;
+execUserReset()
+{
+	x1  = __readMemory32(0x08000004,"Memory");
+	#SP = __readMemory32(0x08000000,"Memory");
+	#PC = x1;
+}
+
+execUserPreload()
+{
+
+}
